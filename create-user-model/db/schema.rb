@@ -19,7 +19,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_20_060700) do
     t.datetime "updated_at", null: false
     t.string "food_url"
     t.json "conditions"
-    t.index ["user_id"], name: "index_cooks_on_user_id"
+    t.index [ "user_id" ], name: "index_cooks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -27,7 +27,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_20_060700) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index [ "email" ], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "cooks", "users"

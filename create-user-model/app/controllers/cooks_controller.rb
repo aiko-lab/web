@@ -1,6 +1,6 @@
 # app/controllers/cooks_controller.rb
 class CooksController < ApplicationController
-  # 気分ごとのレシピリスト
+# 気分ごとのレシピリスト
 
 MOOD_RECIPES = {
  "疲れた" => [
@@ -15,7 +15,7 @@ MOOD_RECIPES = {
   ],
   "眠い" => [
     { name: "鶏肉と長芋の薬膳スープ", url: "https://www.kurashiru.com/recipe_cards/2e35df15-a56a-47a7-b53f-ae6d9bbfc4f5" },
-    { name: "鶏むね肉の塩麹グリル", url: "https://www.kurashiru.com/recipe_cards/ae862b00-7308-47f4-aef7-b09b6373a101"},
+    { name: "鶏むね肉の塩麹グリル", url: "https://www.kurashiru.com/recipe_cards/ae862b00-7308-47f4-aef7-b09b6373a101" },
     { name: "レンズ豆の具だくさんコンソメスープ", url: "https://www.kurashiru.com/recipes/aa9e4761-934e-458a-b270-51cfa96ebd2e" }
   ],
   "ストレスあり" => [
@@ -105,7 +105,7 @@ MOOD_RECIPES = {
   ]
 }
 
-    
+
   def new
     @cook = Cook.new
   end

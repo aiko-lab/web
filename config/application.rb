@@ -8,7 +8,6 @@ Bundler.require(*Rails.groups)
 
 module CreateUserModel1
   class Application < Rails::Application
-    
 Rails::Application
     config.load_defaults 8.1
 

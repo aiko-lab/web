@@ -1,10 +1,10 @@
 class RecordsController < ApplicationController
   def index
-  # 1. まず日付順に並んだレコードを取得
+    # 1. まず日付順に並んだレコードを取得
     @records = Record.all.order(date: :desc)
-  
-  # 2. 日付ごとに集計する（ここをシンプルにします）
-  # .sort は使わず、最初から並んでいる @records を使うのがコツです
+
+    # 2. 日付ごとに集計する（ここをシンプルにします）
+    # .sort は使わず、最初から並んでいる @records を使うのがコツです
     @daily_calories = @records.group_by(&:date).transform_values do |records|
         records.sum(&:total_calories)
     end
@@ -51,7 +51,7 @@ class RecordsController < ApplicationController
   def destroy
   @record = Record.find(params[:id])
   @record.destroy
-  
+
   # status: :see_other を付け加えるのがポイント！
   redirect_to records_path, notice: "記録を削除しました", status: :see_other
   end

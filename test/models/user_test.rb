@@ -8,7 +8,7 @@ class UserTest < ActiveSupport::TestCase
     @user = User.new(
       name: "Example User",
       email: "user@example.com",
-      password:"test_password",
+      password: "test_password",
       password_confirmation: "test_password"
       )
   end
@@ -21,17 +21,17 @@ class UserTest < ActiveSupport::TestCase
     @user.name = ""
     assert_not @user.valid?
   end
-  
+
   test "name should not be too long" do
     @user.name = "a" * 51
     assert_not @user.valid?
   end
-  
+
   test "email should not be too long" do
     @user.email = "a" * 244 + "@example.com"
     assert_not @user.valid?
   end
-  
+
   test "email validation should reject invalid addresses" do
     invalid_addresses = %w[user@example,com user_at_foo.org user.name@ example.]
     invalid_addresses.each do |invalid_address|
@@ -55,5 +55,4 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
-  
 end

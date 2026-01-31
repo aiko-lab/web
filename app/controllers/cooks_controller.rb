@@ -1,6 +1,6 @@
 # app/controllers/cooks_controller.rb
 class CooksController < ApplicationController
-  # 気分ごとのレシピリスト
+# 気分ごとのレシピリスト
 
 MOOD_RECIPES = {
   "頭痛い" => {
@@ -55,7 +55,7 @@ MOOD_RECIPES = {
   }
 }
 
-    
+
   def new
     @cook = Cook.new
   end
@@ -69,4 +69,3 @@ MOOD_RECIPES = {
     render :show
   end
 end
-
